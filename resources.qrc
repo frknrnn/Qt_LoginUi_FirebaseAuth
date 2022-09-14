@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/gif">
+        <file>icons/Spinner-0.5s-100px.gif</file>
+    </qresource>
+</RCC>
