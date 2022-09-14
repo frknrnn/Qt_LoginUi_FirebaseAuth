@@ -15,6 +15,7 @@ public:
     void setAPIKey(const QString & apiKey);
     void signUserUp(const QString & emailAdress,const QString & password);
     void signUserIn(const QString & emailAdress,const QString & password);
+    void sendPasswordResetEmail(const QString & emailAddress);
     void createNetworkAccessManager();
 
 public slots:
@@ -26,6 +27,8 @@ signals:
     void userCreated();
     void userCreatedError();
     void userSignInError();
+    void resetPasswordSuccess();
+    void resetPasswordError();
 
 
 private:

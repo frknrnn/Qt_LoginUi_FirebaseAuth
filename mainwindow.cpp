@@ -20,6 +20,8 @@ MainWindow::MainWindow(QWidget *parent)
     auth->setAPIKey("AIzaSyCbeSxOcaxXwqGEWouM9MZEo2uW2Bue5jw");
     connect(auth,&AuthHandler::userCreated,this,&MainWindow::completeCreateNewUser);
     connect(auth,&AuthHandler::userCreatedError,this,&MainWindow::createNewUserError);
+    connect(auth,&AuthHandler::resetPasswordSuccess,this,&MainWindow::completePasswordReset);
+    connect(auth,&AuthHandler::resetPasswordError,this,&MainWindow::errorPasswordReset);
     initialUi();
 
 
@@ -177,6 +179,25 @@ void MainWindow::completeSignInUser()
     this->hide();
 }
 
+void MainWindow::sendPasswordReset()
+{
+    auth->createNetworkAccessManager();
+    auth->sendPasswordResetEmail(resetPasswordEmail);
+}
+
+void MainWindow::completePasswordReset()
+{
+    loginLabelInfoStyle(1);
+    ui->label_loginInfo->setText("Send email.");
+    ui->label_loginInfo->show();
+    showLogin();
+}
+
+void MainWindow::errorPasswordReset()
+{
+
+}
+
 void MainWindow::createNewUserError()
 {
     ui->stackedWidget->setCurrentIndex(1);
@@ -209,4 +230,15 @@ void MainWindow::on_pushButton_forgotPasswordCancel_clicked()
 void MainWindow::on_pushButton_forgotPassword_clicked()
 {
     showForgotPasswordPage();
+}
+
+
+
+
+
+
+void MainWindow::on_pushButton_forgotPasswordSend_clicked()
+{
+    resetPasswordEmail = ui->lineEdit_passwordReset_email->text();
+    sendPasswordReset();
 }

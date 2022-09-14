@@ -34,6 +34,8 @@ private slots:
 
     void on_pushButton_forgotPassword_clicked();
 
+    void on_pushButton_forgotPasswordSend_clicked();
+
 private:
     Ui::MainWindow *ui;
 
@@ -47,6 +49,9 @@ private:
     void showForgotPasswordPage();
     void completeCreateNewUser();
     void completeSignInUser();
+    void sendPasswordReset();
+    void completePasswordReset();
+    void errorPasswordReset();
     void createNewUserError();
     void createNewUser();
     void signInUser();
@@ -63,6 +68,8 @@ private:
 
     QString userEmail;
     QString userPassword;
+
+    QString resetPasswordEmail;
 
     AuthHandler * auth;
     QThread *authThread;

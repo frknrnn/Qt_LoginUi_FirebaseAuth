@@ -55,6 +55,17 @@ void AuthHandler::signUserIn(const QString &emailAddress, const QString &passwor
     performPost( signInEndpoint, jsonPayload );
 }
 
+void AuthHandler::sendPasswordResetEmail(const QString &emailAddress)
+{
+    m_responseType = "resetPassword";
+    QString resetPasswordEndpoint = "https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=" + m_apiKey;
+    QVariantMap variantPayload;
+    variantPayload["email"] = emailAddress;
+    variantPayload["requestType"] = "PASSWORD_RESET";
+    QJsonDocument jsonPayload = QJsonDocument::fromVariant( variantPayload );
+    performPost( resetPasswordEndpoint, jsonPayload );
+}
+
 void AuthHandler::createNetworkAccessManager()
 {
     m_networkAccessManager = new QNetworkAccessManager( this );
@@ -93,14 +104,17 @@ void AuthHandler::performPost(const QString &url, const QJsonDocument &payload)
 void AuthHandler::parseResponse(const QByteArray &response)
 {
     QJsonDocument jsonDocument = QJsonDocument::fromJson(response);
+    qDebug()<<"response:"<<response;
     if(jsonDocument.object().contains("error")){
         qDebug()<<"Error ocured!";
         if(m_responseType == "signUserUp"){
             qDebug()<<"userCreatedError!";
             emit userCreatedError();
         }
-        if(m_responseType == "signUserIn"){
+        else if(m_responseType == "signUserIn"){
             emit userSignInError();
+        }else{
+            emit resetPasswordError();
         }
     }else if(jsonDocument.object().contains("kind")){
         QString idToken = jsonDocument.object().value("idToken").toString();
@@ -108,8 +122,10 @@ void AuthHandler::parseResponse(const QByteArray &response)
         if(m_responseType == "signUserUp"){
             emit userCreated();
         }
-        if(m_responseType == "signUserIn"){
+        else if(m_responseType == "signUserIn"){
             emit userSignedIn();
+        }else{
+            emit resetPasswordSuccess();
         }
     }else{
         qDebug()<< "The response :" << response;

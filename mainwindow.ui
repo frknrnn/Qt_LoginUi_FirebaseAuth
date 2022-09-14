@@ -206,7 +206,7 @@ border-radius:3px;</string>
                  <property name="geometry">
                   <rect>
                    <x>20</x>
-                   <y>10</y>
+                   <y>-300</y>
                    <width>280</width>
                    <height>1300</height>
                   </rect>
