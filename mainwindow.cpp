@@ -6,7 +6,9 @@
 #include <QThread>
 #include <appform.h>
 #include <iostream>
-
+#include <QPropertyAnimation>
+#include <QRect>
+#include <QEasingCurve>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent,Qt::FramelessWindowHint)
@@ -38,10 +40,32 @@ MainWindow::~MainWindow()
 void MainWindow::createNewUser()
 {
     auth->createNetworkAccessManager();
-    auth->signUserUp("f8f@test.com","123456");
+    auth->signUserUp(newUserEmail,newUserPassword);
 
 }
 
+void MainWindow::signInUser()
+{
+    auth->createNetworkAccessManager();
+    auth->signUserIn(userEmail,userPassword);
+}
+
+void MainWindow::loginLabelInfoStyle(int status)
+{
+    if(status == 0){
+        ui->label_loginInfo->setStyleSheet("QLabel{\n"
+                                           "color: rgb(200, 100, 100);\n"
+                                           "font: 87 7pt \"Segoe UI Black\";\n"
+                                           "border:none;\n"
+                                           "}");
+    }else{
+        ui->label_loginInfo->setStyleSheet("QLabel{\n"
+                                           "color: rgb(100, 200, 100);\n"
+                                           "font: 87 7pt \"Segoe UI Black\";\n"
+                                           "border:none;\n"
+                                           "}");
+    }
+}
 
 void MainWindow::mousePressEvent(QMouseEvent *event)
 {
@@ -97,10 +121,6 @@ void MainWindow::on_pushButton_signup_create_clicked()
 
 }
 
-
-
-
-
 bool MainWindow::checkNewUserInfo()
 {
     qDebug()<< newUserPassword <<" : "<< newUserConfirmPassword;
@@ -121,10 +141,40 @@ void MainWindow::showLoadingPage()
     loadingGifMovie->start();
 }
 
+void MainWindow::showLogin()
+{
+    loginPageAnimation =new QPropertyAnimation(ui->frame_login,"geometry");
+    loginPageAnimation->setDuration(500);
+    loginPageAnimation->setEndValue(QRect(20,10,ui->frame_login->width(),ui->frame_login->height()));
+    loginPageAnimation->setStartValue(QRect(20,-300,ui->frame_login->width(),ui->frame_login->height()));
+    loginPageAnimation->setEasingCurve(QEasingCurve::InOutQuart);
+    loginPageAnimation->start();
+}
+
+void MainWindow::showForgotPasswordPage()
+{
+    forgotPasswordPageAnimation =new QPropertyAnimation(ui->frame_login,"geometry");
+    forgotPasswordPageAnimation->setDuration(500);
+    forgotPasswordPageAnimation->setStartValue(QRect(20,10,ui->frame_login->width(),ui->frame_login->height()));
+    forgotPasswordPageAnimation->setEndValue(QRect(20,-300,ui->frame_login->width(),ui->frame_login->height()));
+    forgotPasswordPageAnimation->setEasingCurve(QEasingCurve::InOutQuart);
+    forgotPasswordPageAnimation->start();
+}
+
 void MainWindow::completeCreateNewUser()
 {
     ui->stackedWidget->setCurrentIndex(0);
+    loginLabelInfoStyle(1);
+    ui->label_loginInfo->setText("User Created.");
+    ui->label_loginInfo->show();
     ui->label_createUserInfo->hide();
+}
+
+void MainWindow::completeSignInUser()
+{
+    Appform *newApp = new Appform();
+    newApp->show();
+    this->hide();
 }
 
 void MainWindow::createNewUserError()
@@ -134,11 +184,29 @@ void MainWindow::createNewUserError()
     ui->label_createUserInfo->show();
 }
 
-
 void MainWindow::on_pushButton_login_clicked()
 {
-    Appform *newApp = new Appform();
-    newApp->show();
-    this->hide();
+    userEmail = ui->lineEdit_login_email->text();
+    userPassword = ui->lineEdit_login_password->text();
+    signInUser();
+    showLoadingPage();
 
+}
+
+
+
+
+
+
+
+
+
+void MainWindow::on_pushButton_forgotPasswordCancel_clicked()
+{
+    showLogin();
+}
+
+void MainWindow::on_pushButton_forgotPassword_clicked()
+{
+    showForgotPasswordPage();
 }

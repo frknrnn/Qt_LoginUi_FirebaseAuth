@@ -202,152 +202,60 @@ border-radius:3px;</string>
                 <property name="frameShadow">
                  <enum>QFrame::Raised</enum>
                 </property>
-                <widget class="QLineEdit" name="lineEdit_login_email">
+                <widget class="QFrame" name="frame_login">
                  <property name="geometry">
                   <rect>
-                   <x>60</x>
-                   <y>70</y>
-                   <width>200</width>
-                   <height>30</height>
+                   <x>20</x>
+                   <y>10</y>
+                   <width>280</width>
+                   <height>1300</height>
                   </rect>
                  </property>
                  <property name="minimumSize">
                   <size>
-                   <width>200</width>
-                   <height>30</height>
+                   <width>280</width>
+                   <height>1300</height>
                   </size>
                  </property>
                  <property name="maximumSize">
                   <size>
-                   <width>200</width>
-                   <height>30</height>
+                   <width>280</width>
+                   <height>1300</height>
                   </size>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true">QLineEdit{
-color: rgb(0,0, 0);
-font: 63 8pt &quot;Segoe UI Semibold&quot;;
-background-color: rgb(255, 255, 255);
-border-radius:15px;
-border: 2px solid rgb(100, 100, 100);
-padding-left: 10px
-}
-
-</string>
+                  <string notr="true">border:none;
+background:transparent;</string>
                  </property>
-                 <property name="inputMask">
-                  <string extracomment="email"/>
+                 <property name="frameShape">
+                  <enum>QFrame::NoFrame</enum>
                  </property>
-                 <property name="text">
-                  <string/>
+                 <property name="frameShadow">
+                  <enum>QFrame::Raised</enum>
                  </property>
-                 <property name="placeholderText">
-                  <string>Email</string>
-                 </property>
-                </widget>
-                <widget class="QPushButton" name="pushButton_forgotPassword">
-                 <property name="geometry">
-                  <rect>
-                   <x>50</x>
-                   <y>150</y>
-                   <width>150</width>
-                   <height>15</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>150</width>
-                   <height>15</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>150</width>
-                   <height>15</height>
-                  </size>
-                 </property>
-                 <property name="cursor">
-                  <cursorShape>PointingHandCursor</cursorShape>
-                 </property>
-                 <property name="toolTip">
-                  <string/>
-                 </property>
-                 <property name="autoFillBackground">
-                  <bool>false</bool>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">QPushButton{
-color: rgb(200, 200, 200);
-font: 87 9pt &quot;Segoe UI Black&quot;;
-border:none;
-}
-
-QPushButton::hover{
-border:none;
-color: rgb(250, 250, 250);
-font: 87 9pt &quot;Segoe UI Black&quot;;
-}</string>
-                 </property>
-                 <property name="text">
-                  <string>Forgot Password?</string>
-                 </property>
-                 <property name="autoRepeat">
-                  <bool>false</bool>
-                 </property>
-                 <property name="autoExclusive">
-                  <bool>false</bool>
-                 </property>
-                 <property name="autoDefault">
-                  <bool>false</bool>
-                 </property>
-                 <property name="default">
-                  <bool>false</bool>
-                 </property>
-                 <property name="flat">
-                  <bool>false</bool>
-                 </property>
-                </widget>
-                <widget class="QLabel" name="user_description">
-                 <property name="geometry">
-                  <rect>
-                   <x>60</x>
-                   <y>20</y>
-                   <width>171</width>
-                   <height>33</height>
-                  </rect>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">color: rgb(255, 255, 255);
-border:none;
-font: 75 16pt &quot;Monospac821 BT&quot;;</string>
-                 </property>
-                 <property name="text">
-                  <string>Log in :</string>
-                 </property>
-                </widget>
-                <widget class="QLineEdit" name="lineEdit_login_password">
-                 <property name="geometry">
-                  <rect>
-                   <x>60</x>
-                   <y>110</y>
-                   <width>200</width>
-                   <height>30</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>200</width>
-                   <height>30</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>200</width>
-                   <height>30</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">QLineEdit{
+                 <widget class="QLineEdit" name="lineEdit_login_password">
+                  <property name="geometry">
+                   <rect>
+                    <x>40</x>
+                    <y>110</y>
+                    <width>200</width>
+                    <height>30</height>
+                   </rect>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>200</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>200</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QLineEdit{
 color: rgb(0,0, 0);
 font: 63 8pt &quot;Segoe UI Semibold&quot;;
 background-color: rgb(255, 255, 255);
@@ -356,40 +264,66 @@ border: 2px solid rgb(100, 100, 100);
 padding-left:10px;
 }
 </string>
-                 </property>
-                 <property name="echoMode">
-                  <enum>QLineEdit::Password</enum>
-                 </property>
-                 <property name="placeholderText">
-                  <string>Password</string>
-                 </property>
-                </widget>
-                <widget class="QPushButton" name="pushButton_quitLogin">
-                 <property name="geometry">
-                  <rect>
-                   <x>80</x>
-                   <y>180</y>
-                   <width>80</width>
-                   <height>25</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>80</width>
-                   <height>25</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>25</height>
-                  </size>
-                 </property>
-                 <property name="cursor">
-                  <cursorShape>PointingHandCursor</cursorShape>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">QPushButton{
+                  </property>
+                  <property name="echoMode">
+                   <enum>QLineEdit::Password</enum>
+                  </property>
+                  <property name="placeholderText">
+                   <string>Password</string>
+                  </property>
+                 </widget>
+                 <widget class="QLabel" name="label_loginInfo">
+                  <property name="geometry">
+                   <rect>
+                    <x>20</x>
+                    <y>260</y>
+                    <width>241</width>
+                    <height>31</height>
+                   </rect>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QLabel{
+color: rgb(200, 100, 100);
+font: 87 7pt &quot;Segoe UI Black&quot;;
+border:none;
+}</string>
+                  </property>
+                  <property name="frameShape">
+                   <enum>QFrame::NoFrame</enum>
+                  </property>
+                  <property name="text">
+                   <string>Username or password incorrect</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                 <widget class="QPushButton" name="pushButton_quitLogin">
+                  <property name="geometry">
+                   <rect>
+                    <x>60</x>
+                    <y>180</y>
+                    <width>80</width>
+                    <height>25</height>
+                   </rect>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>80</width>
+                    <height>25</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>80</width>
+                    <height>25</height>
+                   </size>
+                  </property>
+                  <property name="cursor">
+                   <cursorShape>PointingHandCursor</cursorShape>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton{
 color: rgb(50, 50, 50);
 font: 87 9pt &quot;Segoe UI Black&quot;;
 background-color: rgb(255, 255, 255);
@@ -405,63 +339,160 @@ border:none;
 background-repeat: no-repeat;
 background-position: center;
 }</string>
-                 </property>
-                 <property name="text">
-                  <string>Quit</string>
-                 </property>
-                </widget>
-                <widget class="QLabel" name="label_loginInfo">
-                 <property name="geometry">
-                  <rect>
-                   <x>40</x>
-                   <y>300</y>
-                   <width>241</width>
-                   <height>31</height>
-                  </rect>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">QLabel{
-color: rgb(200, 100, 100);
-font: 87 7pt &quot;Segoe UI Black&quot;;
+                  </property>
+                  <property name="text">
+                   <string>Quit</string>
+                  </property>
+                 </widget>
+                 <widget class="QPushButton" name="pushButton_signup">
+                  <property name="geometry">
+                   <rect>
+                    <x>70</x>
+                    <y>240</y>
+                    <width>150</width>
+                    <height>15</height>
+                   </rect>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>150</width>
+                    <height>15</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>150</width>
+                    <height>15</height>
+                   </size>
+                  </property>
+                  <property name="cursor">
+                   <cursorShape>PointingHandCursor</cursorShape>
+                  </property>
+                  <property name="toolTip">
+                   <string/>
+                  </property>
+                  <property name="autoFillBackground">
+                   <bool>false</bool>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton{
+color: rgb(200, 200, 200);
+font: 87 9pt &quot;Segoe UI Black&quot;;
 border:none;
+}
+
+QPushButton::hover{
+border:none;
+color: rgb(250, 250, 250);
+font: 87 9pt &quot;Segoe UI Black&quot;;
 }</string>
-                 </property>
-                 <property name="frameShape">
-                  <enum>QFrame::NoFrame</enum>
-                 </property>
-                 <property name="text">
-                  <string>Username or password incorrect</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                </widget>
-                <widget class="QPushButton" name="pushButton_login">
-                 <property name="geometry">
-                  <rect>
-                   <x>170</x>
-                   <y>180</y>
-                   <width>80</width>
-                   <height>25</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>80</width>
-                   <height>25</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>25</height>
-                  </size>
-                 </property>
-                 <property name="cursor">
-                  <cursorShape>PointingHandCursor</cursorShape>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">QPushButton{
+                  </property>
+                  <property name="text">
+                   <string>Create an Account</string>
+                  </property>
+                  <property name="autoRepeat">
+                   <bool>false</bool>
+                  </property>
+                  <property name="autoExclusive">
+                   <bool>false</bool>
+                  </property>
+                  <property name="autoDefault">
+                   <bool>false</bool>
+                  </property>
+                  <property name="default">
+                   <bool>false</bool>
+                  </property>
+                  <property name="flat">
+                   <bool>false</bool>
+                  </property>
+                 </widget>
+                 <widget class="QLineEdit" name="lineEdit_login_email">
+                  <property name="geometry">
+                   <rect>
+                    <x>40</x>
+                    <y>70</y>
+                    <width>200</width>
+                    <height>30</height>
+                   </rect>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>200</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>200</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QLineEdit{
+color: rgb(0,0, 0);
+font: 63 8pt &quot;Segoe UI Semibold&quot;;
+background-color: rgb(255, 255, 255);
+border-radius:15px;
+border: 2px solid rgb(100, 100, 100);
+padding-left: 10px
+}
+
+</string>
+                  </property>
+                  <property name="inputMask">
+                   <string extracomment="email"/>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="placeholderText">
+                   <string>Email</string>
+                  </property>
+                 </widget>
+                 <widget class="QLabel" name="user_description">
+                  <property name="geometry">
+                   <rect>
+                    <x>40</x>
+                    <y>20</y>
+                    <width>171</width>
+                    <height>33</height>
+                   </rect>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">color: rgb(255, 255, 255);
+border:none;
+font: 75 16pt &quot;Monospac821 BT&quot;;</string>
+                  </property>
+                  <property name="text">
+                   <string>Log in :</string>
+                  </property>
+                 </widget>
+                 <widget class="QPushButton" name="pushButton_login">
+                  <property name="geometry">
+                   <rect>
+                    <x>150</x>
+                    <y>180</y>
+                    <width>80</width>
+                    <height>25</height>
+                   </rect>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>80</width>
+                    <height>25</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>80</width>
+                    <height>25</height>
+                   </size>
+                  </property>
+                  <property name="cursor">
+                   <cursorShape>PointingHandCursor</cursorShape>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton{
 color: rgb(50, 50, 50);
 font: 87 9pt &quot;Segoe UI Black&quot;;
 background-color: rgb(255, 255, 255);
@@ -477,46 +508,46 @@ border:none;
 background-repeat: no-repeat;
 background-position: center;
 }</string>
-                 </property>
-                 <property name="text">
-                  <string>Log in</string>
-                 </property>
-                 <property name="shortcut">
-                  <string>Return</string>
-                 </property>
-                </widget>
-                <widget class="QPushButton" name="pushButton_signup">
-                 <property name="geometry">
-                  <rect>
-                   <x>90</x>
-                   <y>240</y>
-                   <width>150</width>
-                   <height>15</height>
-                  </rect>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>150</width>
-                   <height>15</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>150</width>
-                   <height>15</height>
-                  </size>
-                 </property>
-                 <property name="cursor">
-                  <cursorShape>PointingHandCursor</cursorShape>
-                 </property>
-                 <property name="toolTip">
-                  <string/>
-                 </property>
-                 <property name="autoFillBackground">
-                  <bool>false</bool>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">QPushButton{
+                  </property>
+                  <property name="text">
+                   <string>Log in</string>
+                  </property>
+                  <property name="shortcut">
+                   <string>Return</string>
+                  </property>
+                 </widget>
+                 <widget class="QPushButton" name="pushButton_forgotPassword">
+                  <property name="geometry">
+                   <rect>
+                    <x>30</x>
+                    <y>150</y>
+                    <width>150</width>
+                    <height>15</height>
+                   </rect>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>150</width>
+                    <height>15</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>150</width>
+                    <height>15</height>
+                   </size>
+                  </property>
+                  <property name="cursor">
+                   <cursorShape>PointingHandCursor</cursorShape>
+                  </property>
+                  <property name="toolTip">
+                   <string/>
+                  </property>
+                  <property name="autoFillBackground">
+                   <bool>false</bool>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton{
 color: rgb(200, 200, 200);
 font: 87 9pt &quot;Segoe UI Black&quot;;
 border:none;
@@ -527,25 +558,204 @@ border:none;
 color: rgb(250, 250, 250);
 font: 87 9pt &quot;Segoe UI Black&quot;;
 }</string>
-                 </property>
-                 <property name="text">
-                  <string>Create an Account</string>
-                 </property>
-                 <property name="autoRepeat">
-                  <bool>false</bool>
-                 </property>
-                 <property name="autoExclusive">
-                  <bool>false</bool>
-                 </property>
-                 <property name="autoDefault">
-                  <bool>false</bool>
-                 </property>
-                 <property name="default">
-                  <bool>false</bool>
-                 </property>
-                 <property name="flat">
-                  <bool>false</bool>
-                 </property>
+                  </property>
+                  <property name="text">
+                   <string>Forgot Password?</string>
+                  </property>
+                  <property name="autoRepeat">
+                   <bool>false</bool>
+                  </property>
+                  <property name="autoExclusive">
+                   <bool>false</bool>
+                  </property>
+                  <property name="autoDefault">
+                   <bool>false</bool>
+                  </property>
+                  <property name="default">
+                   <bool>false</bool>
+                  </property>
+                  <property name="flat">
+                   <bool>false</bool>
+                  </property>
+                 </widget>
+                 <widget class="QLabel" name="label_passwordReset">
+                  <property name="geometry">
+                   <rect>
+                    <x>10</x>
+                    <y>470</y>
+                    <width>261</width>
+                    <height>31</height>
+                   </rect>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QLabel{
+color: rgb(200, 100, 100);
+font: 87 7pt &quot;Segoe UI Black&quot;;
+border:none;
+}</string>
+                  </property>
+                  <property name="frameShape">
+                   <enum>QFrame::NoFrame</enum>
+                  </property>
+                  <property name="text">
+                   <string>Username or password incorrect</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                 <widget class="QPushButton" name="pushButton_forgotPasswordCancel">
+                  <property name="geometry">
+                   <rect>
+                    <x>50</x>
+                    <y>520</y>
+                    <width>80</width>
+                    <height>25</height>
+                   </rect>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>80</width>
+                    <height>25</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>80</width>
+                    <height>25</height>
+                   </size>
+                  </property>
+                  <property name="cursor">
+                   <cursorShape>PointingHandCursor</cursorShape>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton{
+color: rgb(50, 50, 50);
+font: 87 9pt &quot;Segoe UI Black&quot;;
+background-color: rgb(255, 255, 255);
+border-radius:12px;
+border:none;
+background-repeat: no-repeat;
+background-position: center;
+}
+QPushButton::hover{
+background-color:rgb(170, 0, 0);
+border-radius:12px;
+border:none;
+background-repeat: no-repeat;
+background-position: center;
+}</string>
+                  </property>
+                  <property name="text">
+                   <string>Cancel</string>
+                  </property>
+                 </widget>
+                 <widget class="QPushButton" name="pushButton_forgotPasswordSend">
+                  <property name="geometry">
+                   <rect>
+                    <x>150</x>
+                    <y>520</y>
+                    <width>80</width>
+                    <height>25</height>
+                   </rect>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>80</width>
+                    <height>25</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>80</width>
+                    <height>25</height>
+                   </size>
+                  </property>
+                  <property name="cursor">
+                   <cursorShape>PointingHandCursor</cursorShape>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton{
+color: rgb(50, 50, 50);
+font: 87 9pt &quot;Segoe UI Black&quot;;
+background-color: rgb(255, 255, 255);
+border-radius:12px;
+border:none;
+background-repeat: no-repeat;
+background-position: center;
+}
+QPushButton::hover{
+background-color:rgb(0, 124, 0);
+border-radius:12px;
+border:none;
+background-repeat: no-repeat;
+background-position: center;
+}</string>
+                  </property>
+                  <property name="text">
+                   <string>Send</string>
+                  </property>
+                 </widget>
+                 <widget class="QLineEdit" name="lineEdit_passwordReset_email">
+                  <property name="geometry">
+                   <rect>
+                    <x>10</x>
+                    <y>430</y>
+                    <width>250</width>
+                    <height>30</height>
+                   </rect>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>250</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>250</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QLineEdit{
+color: rgb(0,0, 0);
+font: 63 8pt &quot;Segoe UI Semibold&quot;;
+background-color: rgb(255, 255, 255);
+border-radius:15px;
+border: 2px solid rgb(100, 100, 100);
+padding-left: 10px
+}
+
+</string>
+                  </property>
+                  <property name="inputMask">
+                   <string extracomment="email"/>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="placeholderText">
+                   <string>Email</string>
+                  </property>
+                 </widget>
+                 <widget class="QLabel" name="user_description_4">
+                  <property name="geometry">
+                   <rect>
+                    <x>10</x>
+                    <y>390</y>
+                    <width>221</width>
+                    <height>33</height>
+                   </rect>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">color: rgb(255, 255, 255);
+font: 75 13pt &quot;Monospac821 BT&quot;;</string>
+                  </property>
+                  <property name="text">
+                   <string>Password Reset :</string>
+                  </property>
+                 </widget>
                 </widget>
                </widget>
               </item>
